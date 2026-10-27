@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7b1e3a">
+  <title>Student Grade Portal</title>
+  <link rel="stylesheet" href="StudentPortalStyle.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <section id="loginPage" class="login-page">
+    <div class="login-brand">
+      <div class="brand-mark">SG</div>
+      <div>
+        <h1>Student Grade Portal</h1>
+        <p>Academic information system</p>
+      </div>
+    </div>
+    <div class="login-card">
+      <div class="login-heading">
+        <span class="eyebrow">ACADEMIC PORTAL</span>
+        <h2>Welcome back</h2>
+        <p>Sign in to access your academic dashboard.</p>
+      </div>
+      <div class="role-tabs" aria-label="Choose account role">
+        <button class="role-tab active" type="button" data-role="student">Student</button>
+        <button class="role-tab" type="button" data-role="teacher">Teacher</button>
+        <button class="role-tab" type="button" data-role="admin">Admin</button>
+      </div>
+      <form id="loginForm">
+        <label id="loginIdLabel" for="loginId">LRN</label>
+        <input id="loginId" name="loginId" required placeholder="Enter your LRN" autocomplete="username">
+        <label for="loginPassword">Password</label>
+        <input id="loginPassword" name="password" type="password" required placeholder="Enter password" autocomplete="current-password">
+        <button class="primary-btn full" type="submit">Sign In <span aria-hidden="true">→</span></button>
+      </form>
+      <div class="demo-credentials">
+        <strong>Demo accounts</strong>
+        <p><b>Student:</b> 123456789012 / student123</p>
+        <p><b>Teacher:</b> teacher01 / teacher123</p>
+        <p><b>Admin:</b> admin / admin123</p>
+      </div>
+      <p class="security-note">Demo project only. Do not use real or sensitive passwords.</p>
+    </div>
+    <p class="login-footer">Student Grade Portal · Activity 2</p>
+  </section>
+
+  <div id="app" class="app-shell hidden">
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-mark small">SG</div>
+        <div><strong>Grade Portal</strong><span>Academic system</span></div>
+      </div>
+      <nav id="sideNav" class="side-nav" aria-label="Main navigation"></nav>
+      <div class="sidebar-bottom">
+        <div class="mini-user"><div id="userAvatar" class="avatar">U</div><div><strong id="sidebarUserName">User</strong><span id="sidebarUserRole">Role</span></div></div>
+        <button id="logoutBtn" class="nav-item logout-btn" type="button"><span>↪</span> Sign out</button>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button id="menuBtn" class="icon-btn menu-btn" type="button" aria-label="Open menu">☰</button>
+        <div class="topbar-title"><span class="eyebrow">ACADEMIC OVERVIEW</span><h2 id="pageTitle">Dashboard</h2></div>
+        <div class="topbar-actions">
+          <button id="themeBtn" class="icon-btn" type="button" aria-label="Toggle color theme" title="Toggle theme">◐</button>
+          <div class="topbar-user"><div id="topAvatar" class="avatar">U</div><span id="topUserName">User</span></div>
+        </div>
+      </header>
+      <section id="pageContent" class="content" aria-live="polite"></section>
+      <footer class="app-footer">Student Grade Portal <span>•</span> Local demo prototype</footer>
+    </main>
+  </div>
+
+  <div id="modalRoot"></div>
+  <script src="StudentPortalScript.js"></script>
+</body>
+</html>
